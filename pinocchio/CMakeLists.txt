@@ -1,0 +1,17 @@
+add_executable(
+  load_model
+  load_model.cpp
+  formatting.hpp
+)
+target_link_libraries(
+  load_model
+  PRIVATE
+  fmt::fmt
+  pinocchio::pinocchio
+  cppad::cppad
+)
+target_compile_definitions(
+  load_model
+  PRIVATE
+  PINOCCHIO_MODEL_DIR=\"${PINOCCHIO_MODEL_DIR}\"
+)
